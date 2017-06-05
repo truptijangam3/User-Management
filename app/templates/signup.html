@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<strong><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></strong>
+ <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+ 
+    <link href="../static/signup.css" rel="stylesheet">
+</head>
+    <body>
+<header>
+      <div class="container">
+        <h1 class="logo">Student Registion</h1>
+        <strong><nav>
+           <ul class="menu">
+	     <li><a href="{{ url_for('home') }}">Home</a></li>
+	     <li><a href="{{ url_for('showSignIn') }}">Sign In</a></li>
+         <li><a href="{{ url_for('showSignUp') }}">Sign Up</a></li>
+	       </ul>
+</nav></strong>
+      </div>
+    </header> 
+       
+      <div class="jumbotron">
+        <h2>Foslipy Sign Up Form</h2>
+        <form class="form-signup">
+
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <label for="inputPassword" class="sr-only">Confirm your Password</label>
+        <input type="password" name="inputConfirmPassword" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+         
+ 
+         <label for="inputDate" class="sr-only">DD</label>
+        <input id="txtDay" type="text" name="inputDate" class="form-control" placeholder="Birth Date" required>
+
+        <label for="inputMonth" class="sr-only">MM</label>
+         <input id="txtMonth" type="text" name="inputMonth" class="form-control" placeholder="Birth Month" required>
+
+        <label for="inputYear" class="sr-only">YYYY</label>
+         <input id="txtYear" type="text" name="inputYear" class="form-control" placeholder="Birth Year" required>
+
+
+        <label for="inputMobileNumber" class="sr-only">Mobile Number</label>
+         <input type="MobileNumber" name="inputMobileNumber" id="inputMobileNumber" class="form-control" placeholder="Mobile Number" required autofocus>
+
+
+        <label for="inputLocation" class="sr-only">Location</label>
+         <input type="Location" name="inputLocation" id="inputLocation" class="form-control" placeholder="Location" required autofocus>
+
+
+
+
+     
+         <button id="btnSignUp" class="btn btn-lg btn-primary btn-block
+
+         $(function() {
+    $('#btnSignUp').click(function() {
+ 
+        $.ajax({
+            url: '/signUp',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
+           type="button">Sign up</button>
+     <h3><button type="reset" value="Reset">Reset</button></h3>
+
+     </form>
+      </div>
+
+
+       
+       <footer class="footer">
+        <p>&copy; Company 2015</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>
+

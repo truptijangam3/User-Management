@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+<strong><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></strong>
+ <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+ 
+    <link href="../static/signup.css" rel="stylesheet">
+</head>
+    <body>
+<header>
+      <div class="container">
+        
+        <strong><nav>
+           <ul class="menu">
+	     <li><a href="{{ url_for('home') }}">Home</a></li>
+	     <li><a href="{{ url_for('showSignIn') }}">Sign In</a></li>
+         <li><a href="{{ url_for('showSignUp') }}">Sign Up</a></li>
+	       </ul>
+</nav></strong>
+      </div>
+    </header> 
+
+ <body>
+
+   <h1>Login</h1>
+   
+   {% if error %}
+   <p><strong>Error:</stong>{{error}}
+   {% endif %}
+
+   <form action = "{{ url_for('login') }}" method = "POST">
+<div class="jumbotron">
+    <dl>
+     <dt>Username:</dt>
+
+     <dd>
+        <input type=text name=username value="{{request.form.username}}">
+     </dd>
+
+     <dt>Password:</dt>
+     <dd> <input type=password name=password></dd>
+    </dl>
+    <p><input type=submit value=Login></p>
+</div>
+   </form>
+
+  <footer class="footer">
+        <p>&copy; Company 2015</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>
+
+
+    
